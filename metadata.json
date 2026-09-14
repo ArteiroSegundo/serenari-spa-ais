@@ -1,0 +1,6 @@
+{
+  "name": "SEREN",
+  "description": "Luxury spa and wellness center.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
