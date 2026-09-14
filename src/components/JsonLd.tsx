@@ -13,7 +13,7 @@ export function JsonLd() {
     "telephone": SPA_INFO.phone,
     "email": SPA_INFO.email,
     "image": "https://www.serenarispa.com.br/background-hero.png",
-    "logo": "https://www.serenarispa.com.br/logo-serenari-header-removebg-preview.png",
+    "logo": "https://www.serenarispa.com.br/logo-about-us.png",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": SPA_INFO.streetAddress,

@@ -56,9 +56,9 @@ export const SPA_INFO = {
   reviewsCount: "+ de 139 avaliações 5 estrelas no Google!",
   ratingValue: 5.0,
   reviewCountNum: 139,
-  logoHeader: "/logo-serenari-header-removebg-preview.png",
+  logoHeader: "/logo-about-us.png",
   logoAboutUs: "/logo-about-us.png",
-  logoWhite: "/completa-branca.png",
+  logoWhite: "/logo-about-us.png",
   tagline: "Aqui nós transformamos o toque em bem-estar, e entregamos reconexão, presença e leveza através de experiências de cuidado com o corpo e com a mente."
 };
 
