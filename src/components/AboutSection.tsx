@@ -7,22 +7,23 @@ import { ACROSTIC_POEM, SPA_INFO } from "@/data/spaData";
 
 export function AboutSection() {
   return (
-    <section id="sobre" className="py-24 bg-[#142b17] text-white relative overflow-hidden">
-      {/* Subtle Background Glow */}
-      <div className="absolute top-1/2 left-0 w-96 h-96 bg-[#225627] rounded-full blur-[140px] opacity-30 -translate-y-1/2 pointer-events-none" />
+    <section id="sobre" className="py-28 bg-[#142b17] text-white relative overflow-hidden">
+      {/* Background Subtle Gradient Glow */}
+      <div className="absolute top-1/3 left-0 w-96 h-96 bg-[#225627] rounded-full blur-[140px] opacity-30 pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#a24f24] rounded-full blur-[140px] opacity-20 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          {/* Left Column - History & Narrative */}
+        
+        {/* PARTE 1: HISTÓRIA & ESSÊNCIA */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center mb-24">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             className="lg:col-span-7 space-y-6"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 text-amber-300 text-xs font-bold uppercase tracking-widest border border-white/15">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 text-amber-300 text-xs font-semibold uppercase tracking-widest border border-white/15">
               <Sparkles className="w-3.5 h-3.5 text-amber-400" />
               Nossa Essência em Suzano/SP
             </div>
@@ -39,69 +40,98 @@ export function AboutSection() {
               <p>
                 Acreditamos que autocuidado é um direito, não um luxo. Cada detalhe importa: o ambiente sensorial, o acolhimento respeitoso, os aromas terapêuticos e a escuta atenta das necessidades de cada corpo.
               </p>
-              <p className="text-amber-100 italic border-l-2 border-[#a24f24] pl-4 font-serif-title text-xl">
+              <p className="text-amber-100 italic border-l-2 border-[#a24f24] pl-4 font-serif-title text-xl pt-1">
                 &ldquo;No Serenari, não oferecemos apenas massagens. Entregamos reconexão, presença e leveza.&rdquo;
               </p>
             </div>
 
             {/* Core Badges */}
-            <div className="pt-4 grid grid-cols-1 sm:grid-cols-3 gap-4 border-t border-white/15">
+            <div className="pt-6 border-t border-white/15 grid grid-cols-1 sm:grid-cols-3 gap-6">
               <div className="flex items-center gap-3">
-                <div className="p-2.5 rounded-full bg-white/10 text-amber-300">
-                  <Heart className="w-5 h-5" />
+                <div className="p-2 rounded-full bg-white/10 text-amber-300 shrink-0">
+                  <Heart className="w-4 h-4" />
                 </div>
                 <span className="text-xs font-semibold text-white">Massoterapia Humanizada</span>
               </div>
               <div className="flex items-center gap-3">
-                <div className="p-2.5 rounded-full bg-white/10 text-amber-300">
-                  <Feather className="w-5 h-5" />
+                <div className="p-2 rounded-full bg-white/10 text-amber-300 shrink-0">
+                  <Feather className="w-4 h-4" />
                 </div>
                 <span className="text-xs font-semibold text-white">Leveza & Presença</span>
               </div>
               <div className="flex items-center gap-3">
-                <div className="p-2.5 rounded-full bg-white/10 text-amber-300">
-                  <ShieldCheck className="w-5 h-5" />
+                <div className="p-2 rounded-full bg-white/10 text-amber-300 shrink-0">
+                  <ShieldCheck className="w-4 h-4" />
                 </div>
                 <span className="text-xs font-semibold text-white">Cuidado Integral</span>
               </div>
             </div>
           </motion.div>
 
-          {/* Right Column - Acrostic Poem Card */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, scale: 0.96 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="lg:col-span-5 bg-white/5 backdrop-blur-xl p-8 rounded-3xl border border-white/15 shadow-2xl relative"
+            className="lg:col-span-5 relative flex items-center justify-center"
           >
-            <div className="absolute top-6 right-6 opacity-20 w-16 h-16 relative">
+            <div className="relative w-full h-[400px] sm:h-[460px] rounded-2xl overflow-hidden shadow-2xl border border-white/15">
               <Image
-                src={SPA_INFO.logoAboutUs}
-                alt="Serenari Symbol"
+                src="/sobre-nos/04.jpg"
+                alt="Espaço Serenari Spa Suzano"
                 fill
-                className="object-contain"
+                className="object-cover object-center"
               />
-            </div>
-
-            <h3 className="font-serif-title text-2xl text-amber-200 mb-6 flex items-center gap-2">
-              <span>Acróstico Serenari</span>
-            </h3>
-
-            <div className="space-y-3.5">
-              {ACROSTIC_POEM.map((line, idx) => (
-                <div key={idx} className="flex items-start gap-3 group">
-                  <span className="flex items-center justify-center w-7 h-7 rounded-lg bg-[#a24f24] text-white font-bold text-sm shrink-0 font-serif-title shadow-sm group-hover:scale-110 transition-transform">
-                    {line.letter}
-                  </span>
-                  <p className="text-xs sm:text-sm text-emerald-100/90 font-light leading-snug pt-1">
-                    {line.text}
-                  </p>
-                </div>
-              ))}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#142b17] via-transparent to-transparent opacity-80" />
+              
+              <div className="absolute bottom-6 left-6 right-6 text-white">
+                <p className="text-xs uppercase tracking-widest text-amber-300 font-semibold mb-1">
+                  Suzano / SP
+                </p>
+                <p className="font-serif-title text-xl text-white">
+                  Seu refugio urbano de descanso
+                </p>
+              </div>
             </div>
           </motion.div>
         </div>
+
+        {/* PARTE 2: ACRÓSTICO EDITORIAL (S-E-R-E-N-A-R-I COMO PEÇA DE DESIGN) */}
+        <div className="pt-16 border-t border-white/15">
+          <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
+            <span className="text-xs font-bold uppercase tracking-[0.3em] text-amber-300">
+              Identidade em Versos
+            </span>
+            <h3 className="font-serif-title text-3xl sm:text-4xl font-light text-white">
+              O Acróstico <span className="italic text-[#e4b27a]">Serenari</span>
+            </h3>
+          </div>
+
+          {/* Editorial Vertical Typography Grid - No Carditis */}
+          <div className="max-w-4xl mx-auto space-y-6">
+            {ACROSTIC_POEM.map((line, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-30px" }}
+                transition={{ duration: 0.5, delay: idx * 0.05 }}
+                className="group flex items-center gap-6 py-3 border-b border-white/10 hover:border-amber-400/50 transition-colors"
+              >
+                <span className="font-serif-title text-3xl sm:text-4xl font-bold text-[#e4b27a] w-10 text-center shrink-0 group-hover:scale-110 transition-transform">
+                  {line.letter}
+                </span>
+
+                <div className="w-8 h-[1px] bg-[#a24f24] shrink-0" />
+
+                <p className="text-sm sm:text-lg text-emerald-100/90 font-light tracking-wide leading-relaxed group-hover:text-white transition-colors">
+                  {line.text}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
       </div>
     </section>
   );

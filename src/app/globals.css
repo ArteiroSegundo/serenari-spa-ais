@@ -10,6 +10,7 @@
     --secondary-light: #fdf5f0;
     --accent: #c5a059;
     --bg-warm: #fbf9f5;
+    --bg-dark: #142b17;
     --bg-card: #ffffff;
     --bg-subtle: #f4f0e8;
     --text-main: #1b261b;
@@ -22,6 +23,8 @@
 html {
   scroll-behavior: smooth;
   font-family: var(--font-jakarta), system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -32,6 +35,13 @@ body {
 
 .font-serif-title {
   font-family: var(--font-cormorant), Georgia, serif;
+}
+
+/* Accessibility Focus Visible */
+*:focus-visible {
+  outline: 2px solid #a24f24;
+  outline-offset: 3px;
+  border-radius: 4px;
 }
 
 /* Custom scrollbar */
@@ -52,25 +62,21 @@ body {
   background: #1a441e;
 }
 
-/* Glassmorphism utility */
-.glass-panel {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+/* Editorial Dividers & Hairlines */
+.border-hairline {
+  border-color: rgba(34, 86, 39, 0.12);
 }
 
-.glass-dark {
-  background: rgba(20, 43, 23, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+.border-hairline-dark {
+  border-color: rgba(255, 255, 255, 0.12);
 }
 
-/* Animations */
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-8px); }
-}
-
-.animate-float {
-  animation: float 4s ease-in-out infinite;
+/* Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
